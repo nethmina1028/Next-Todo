@@ -1,20 +1,36 @@
 {
-    "tasks": [
-        {
-            "id": "1",
-            "text": "buy milk and bread"
-        
-        },
-        {
-            "id": "2",
-            "text": "buy apple"
-        
-        },  {
-            "id": "3",
-            "text": "buy car to son"
-        
-        }
-    ]
+  "tasks": [
+    {
+      "id": "1",
+      "text": "buy milk and bread"
+    },
+    {
+      "id": "2",
+      "text": "buy apple"
+    },
+    {
+      "id": "3",
+      "text": "buy car to son"
+    },
+    {
+      "id": "4",
+      "text": "buy carrot"
+    },
+    {
+      "id": "5",
+      "text": "car wash"
+    },
+    {
+      "id": "a5bf5b69-190c-4187-ba8b-faa767ca2c04",
+      "text": "scccccscccs"
+    },
+    {
+      "id": "cdf4a239-47ca-46d6-be9f-9b1a9815b3cf",
+      "text": ""
+    },
+    {
+      "id": "a37e6422-7f7a-4f3e-aa9d-4b0f5a9261d1",
+      "text": "biyen kadulin"
+    }
+  ]
 }
-
-
