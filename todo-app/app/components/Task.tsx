@@ -6,7 +6,7 @@ import React, { FormEventHandler, useState } from 'react'
 import Modal from './Modal';
 import { text } from 'stream/consumers';
 import { useRouter } from 'next/navigation';
-import { editTodo } from '@/api';
+import { deleteTodo, editTodo } from '@/api';
 
 interface TaskProps {
     task: ITask
@@ -31,10 +31,17 @@ const Task:React.FC<TaskProps> = ({task}) => {
     text:taskToEdit,
    });
 
-    setTaskToEdit('');
+   
     setOpenModalEdit(false);
     router.refresh(); //FOR auto refresh 
 }
+
+   const handleDeteteTask = async (id:string) =>{
+        
+     await deleteTodo(id);
+     setOpenModalDeleted(false);
+     router.refresh(); //FOR auto refresh
+   }
 
   return (
     <tr key={task.id}>        
@@ -63,7 +70,25 @@ const Task:React.FC<TaskProps> = ({task}) => {
   </form>
 
   </Modal>
-      <FiTrash2 cursor="pointer" className='text-red-500' size={25} />
+
+      <FiTrash2 
+      onClick={() =>setOpenModalDeleted(true)} 
+      cursor="pointer"
+       className='text-red-500' 
+       size={25} />
+
+      <Modal modalOpen={openModalDeleted} setModalOpen={setOpenModalDeleted}>
+               <h3 className='text-lg'>Are you sure, you want to delete this task ?</h3>
+               <div className='modal-action'>
+                    <button
+                    onClick={() => handleDeteteTask(task.id)}
+                    className='btn'
+                    >
+                      Yes
+                    </button>
+               </div>
+     </Modal>
+
     </td>        
   </tr>
   )
